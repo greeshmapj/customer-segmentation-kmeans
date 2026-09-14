@@ -1,12 +1,14 @@
-# Customer Segmentation using K-Means Clustering
+# Supermarket Transaction Preprocessing & Customer Segmentation
 
-## Overview
-Segmented customer transaction data to identify purchasing groups for targeted marketing campaigns.
+## 1. Executive Summary
+This project analyzes a 9,800-record retail transaction dataset to evaluate purchasing patterns, clean messy transaction metrics, and segment customer demand behavior for targeted retail operations.
 
-## Methodology
-* **Data Preprocessing:** Handled missing values, encoded categorical features, and performed standard feature scaling.
-* **Clustering:** Implemented K-Means clustering and determined the optimal cluster count using the Elbow Method and Silhouette Analysis.
-* **Insights:** Extracted key behavioral patterns across high-value and frequent shoppers.
+## 2. Pipeline & Methodology
+* **Data Cleansing:** Handled missing postal data via median imputation and verified zero duplicate records across 9,800 entries.
+* **Feature Engineering:** Extracted temporal behavioral attributes including `Order Month` and `Ship Duration` (`Ship Date` - `Order Date`).
+* **Outlier & Skewness Treatment:** Applied 1.5*IQR capping and square-root transformation on skewed `Sales` revenue distributions.
+* **Encoding & Scaling:** Implemented one-hot encoding on categorical channels (`Ship Mode`, `Segment`, `Region`, `Category`) and target encoding for high-cardinality geographic features (`City`, `State`, `Sub-Category`), followed by `StandardScaler` normalization.
+* **Clustering Analysis:** Evaluated cluster viability using the Elbow Method (WCSS) and applied K-Means clustering to identify distinct customer ordering behaviors.
 
-## Tech Stack
-* Python, Pandas, Scikit-Learn, Matplotlib, Seaborn
+## 3. Tech Stack
+* Python, Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn[cite: 3]
